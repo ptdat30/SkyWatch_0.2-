@@ -1,0 +1,27 @@
+def tinh_tong_nhap_tay():
+    """Tính tổng các giá trị được nhập từ bàn phím với số lượng tùy chọn."""
+    while True:
+        try:
+            so_luong = int(input("Bạn muốn nhập bao nhiêu số? "))
+            if so_luong > 0:
+                break
+            else:
+                print("Vui lòng nhập một số dương.")
+        except ValueError:
+            print("Đầu vào không hợp lệ. Vui lòng nhập một số nguyên.")
+
+    cac_gia_tri = []
+    for i in range(so_luong):
+        while True:
+            try:
+                gia_tri = float(input(f"Nhập giá trị thứ {i + 1}: "))
+                cac_gia_tri.append(gia_tri)
+                break
+            except ValueError:
+                print("Đầu vào không hợp lệ. Vui lòng nhập một số.")
+
+    tong = sum(cac_gia_tri)
+    print(f"Tổng của các giá trị đã nhập là: {tong}")
+
+if __name__ == "__main__":
+    tinh_tong_nhap_tay()
